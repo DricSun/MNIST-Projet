@@ -1,0 +1,18 @@
+=== Métriques d'entraînement MNIST (PyTorch) ===
+Date: 2025-07-28 15:57:29
+Device: mps
+Époques: 3
+Batch size: 128
+Learning rate: 0.001
+Augmentation: Non
+Temps d'entraînement: 0:00:34.951994
+Précision finale (train): 0.9781
+Précision finale (val): 0.9872
+Meilleure précision (val): 0.9872
+Précision de test: 0.9896
+Perte de test: 0.0327
+
+=== Historique d'entraînement ===
+Époque 1: Train Acc=0.8959, Val Acc=0.9782, Train Loss=0.3332, Val Loss=0.0762
+Époque 2: Train Acc=0.9690, Val Acc=0.9840, Train Loss=0.1093, Val Loss=0.0550
+Époque 3: Train Acc=0.9781, Val Acc=0.9872, Train Loss=0.0772, Val Loss=0.0453
