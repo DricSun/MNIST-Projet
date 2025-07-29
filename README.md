@@ -2,6 +2,10 @@
 
 Un projet complet de reconnaissance de chiffres manuscrits utilisant un réseau de neurones convolutionnel (CNN) avec **PyTorch** et une interface web interactive avec Flask.
 
+## Lien du site
+
+https://dricsun.github.io/MNIST-Projet/templates/index.html
+
 ## 📋 Aperçu du Projet
 
 Ce projet implémente un système de classification automatique de chiffres manuscrits (0-9) basé sur le célèbre dataset MNIST. Il comprend :
