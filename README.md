@@ -4,7 +4,7 @@ Un projet complet de reconnaissance de chiffres manuscrits utilisant un réseau 
 
 ## Lien du site
 
-https://dricsun.github.io/MNIST-Projet/templates/index.html
+https://dricsun.github.io/MNIST-Projet/docs/index.html
 
 ## 📋 Aperçu du Projet
 

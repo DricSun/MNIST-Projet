@@ -369,7 +369,7 @@
                 
                 try {
                     this.updateResult('info', '⏳ Chargement du modèle ONNX.js...', true);
-                    this.session = await ort.InferenceSession.create('./models/mnist_model.onnx');
+                    this.session = await ort.InferenceSession.create('./mnist_model.onnx');
                     this.modelLoaded = true;
                     this.updateResult('success', '✅ Mode ONNX.js - Prêt à prédire !');
                     document.getElementById('predictBtn').disabled = false;
