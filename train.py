@@ -63,22 +63,22 @@ def main():
     
     args = parser.parse_args()
     
-    print("=== 🔥 Projet de Classification MNIST avec PyTorch ===\n")
+    print("=== Projet de Classification MNIST avec PyTorch ===\n")
     
     # Configuration du device
     if args.device == 'auto':
         if torch.cuda.is_available():
             device = torch.device('cuda')
-            print(f"🚀 CUDA détecté: {torch.cuda.get_device_name()}")
+            print(f"CUDA détecté: {torch.cuda.get_device_name()}")
         elif torch.backends.mps.is_available():
             device = torch.device('mps')
             print("🍎 Apple Silicon détecté: utilisation de MPS")
         else:
             device = torch.device('cpu')
-            print("💻 Utilisation du CPU")
+            print("Utilisation du CPU")
     else:
         device = torch.device(args.device)
-        print(f"🎯 Device spécifié: {device}")
+        print(f"Device spécifié: {device}")
     
     # Créer les dossiers nécessaires
     os.makedirs('models', exist_ok=True)
@@ -124,13 +124,13 @@ def main():
     end_time = datetime.now()
     
     training_time = end_time - start_time
-    print(f"\n⏱️  Temps d'entraînement: {training_time}")
+    print(f"\nTemps d'entraînement: {training_time}")
     
     # Évaluer sur les données de test
     print("\n5. Évaluation sur les données de test...")
     test_loss, test_accuracy, _, _ = model.evaluate(test_loader)
     print(f"📊 Perte de test: {test_loss:.4f}")
-    print(f"🎯 Précision de test: {test_accuracy:.4f} ({test_accuracy*100:.2f}%)")
+    print(f"Précision de test: {test_accuracy:.4f} ({test_accuracy*100:.2f}%)")
     
     # Statistiques détaillées
     final_train_acc = history['train_accuracies'][-1]
@@ -187,10 +187,10 @@ def main():
             print(f"✅ Modèle ONNX sauvegardé: {onnx_path}")
             
         except ImportError:
-            print("⚠️  ONNX non installé. Pour l'export ONNX:")
+            print("ONNX non installé. Pour l'export ONNX:")
             print("   pip install onnx onnxruntime")
         except Exception as e:
-            print(f"⚠️  Erreur lors de l'export ONNX: {e}")
+            print(f"Erreur lors de l'export ONNX: {e}")
         
         # Sauvegarder les métriques finales
         metrics_file = 'results/training_metrics.txt'
@@ -222,16 +222,16 @@ def main():
     # Messages de fin
     print("\n" + "="*60)
     print("✅ Entraînement terminé avec succès!")
-    print(f"🏆 Précision finale: {test_accuracy*100:.2f}%")
+    print(f"Précision finale: {test_accuracy*100:.2f}%")
     
     if test_accuracy > 0.98:
-        print("🌟 Excellent résultat! Le modèle a une très bonne performance.")
+        print("Excellent résultat! Le modèle a une très bonne performance.")
     elif test_accuracy > 0.95:
         print("👍 Bon résultat! Le modèle fonctionne bien.")
     else:
-        print("💡 Le modèle pourrait être amélioré. Essayez plus d'époques ou l'augmentation de données.")
+        print("Le modèle pourrait être amélioré. Essayez plus d'époques ou l'augmentation de données.")
     
-    print(f"\n🚀 Pour tester le modèle: python app.py")
+    print(f"\nPour tester le modèle: python app.py")
     print(f"📊 Pour évaluer: python evaluate.py --model_path {args.model_path}")
 
 if __name__ == "__main__":

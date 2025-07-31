@@ -1,10 +1,10 @@
-# 🔥 Projet de Classification MNIST avec PyTorch
+# Projet de Classification MNIST avec PyTorch
 
 Un projet complet de reconnaissance de chiffres manuscrits utilisant un réseau de neurones convolutionnel (CNN) avec **PyTorch** et une interface web interactive avec Flask.
 
 ## Lien du site
 
-https://dricsun.github.io/MNIST-Projet/docs/index.html
+https://dricsun.github.io/MNIST-Projet/
 
 ## 📋 Aperçu du Projet
 
@@ -15,18 +15,18 @@ Ce projet implémente un système de classification automatique de chiffres manu
 - **Scripts d'entraînement et d'évaluation** complets avec visualisations avancées
 - **Support multi-plateforme** : CPU, CUDA (NVIDIA), MPS (Apple Silicon)
 
-## 🚀 Fonctionnalités
+## Fonctionnalités
 
-- ✨ **Classification en temps réel** de chiffres manuscrits
-- 🎨 **Canvas interactif** pour dessiner des chiffres
+- **Classification en temps réel** de chiffres manuscrits
+- **Canvas interactif** pour dessiner des chiffres
 - 📁 **Upload d'images** avec préprocessing automatique
 - 📊 **Visualisations détaillées** des performances et métriques
 - 🔍 **Analyse avancée des erreurs** de classification
-- 📱 **Interface responsive** compatible mobile et desktop
-- ⚡ **Accélération GPU** automatique (CUDA/MPS)
-- 🔥 **Framework PyTorch** moderne et flexible
+- **Interface responsive** compatible mobile et desktop
+- **Accélération GPU** automatique (CUDA/MPS)
+- **Framework PyTorch** moderne et flexible
 
-## 🛠️ Installation
+## Installation
 
 ### Prérequis
 
@@ -69,7 +69,7 @@ mnist-classification-project/
 └── 📖 README.md              # Cette documentation
 ```
 
-## 🎯 Utilisation
+## Utilisation
 
 ### 1. Entraînement du Modèle
 
@@ -149,13 +149,13 @@ L'interface web offre deux modes d'interaction :
 - Préprocessing automatique vers 28x28 pixels
 - Affichage de l'image traitée
 
-### ✏️ Dessin Interactif
+### Dessin Interactif
 - Canvas HTML5 responsive pour dessiner des chiffres
 - Support tactile pour mobiles et tablettes
 - Prédiction instantanée avec score de confiance
 - Interface intuitive et moderne
 
-## 🔥 Architecture du Modèle PyTorch
+## Architecture du Modèle PyTorch
 
 Le modèle CNN utilise l'architecture suivante :
 
@@ -203,7 +203,7 @@ Linear(64→10) + LogSoftmax
 - **Temps de prédiction** : <50ms par image
 - **Support des devices** : CPU, CUDA, Apple Silicon MPS
 
-## ⚡ Support GPU
+## Support GPU
 
 Le projet détecte et utilise automatiquement l'accélération matérielle disponible :
 
@@ -222,7 +222,7 @@ python train.py  # Utilisera MPS si disponible
 ### CPU Fallback
 Le projet fonctionne parfaitement sur CPU si aucun GPU n'est disponible.
 
-## 🔧 Personnalisation
+## Personnalisation
 
 ### Modifier l'Architecture du Modèle
 
@@ -341,6 +341,6 @@ Pour toute question ou problème :
 
 ---
 
-**🔥 Amusez-vous bien avec PyTorch et la reconnaissance de chiffres !**
+**Amusez-vous bien avec PyTorch et la reconnaissance de chiffres !**
 
 > Ce projet démontre les capacités modernes de PyTorch pour le deep learning avec une interface utilisateur professionnelle. Parfait pour l'apprentissage, la recherche, ou comme base pour des projets plus avancés. 

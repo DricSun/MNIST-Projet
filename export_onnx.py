@@ -29,10 +29,10 @@ def export_to_onnx(model_path, onnx_path, batch_size=1):
     # Créer un exemple d'entrée
     dummy_input = torch.randn(batch_size, 1, 28, 28, device=device)
     
-    print(f"🎯 Input shape: {dummy_input.shape}")
+    print(f"Input shape: {dummy_input.shape}")
     
     # Export vers ONNX
-    print(f"⚡ Export vers {onnx_path}...")
+    print(f"Export vers {onnx_path}...")
     
     torch.onnx.export(
         model.model,                     # Modèle PyTorch
@@ -129,21 +129,21 @@ def test_onnx_model(onnx_path, pytorch_model_path, num_tests=5):
     
     accuracy = correct_matches / num_tests * 100
     print("-" * 60)
-    print(f"🎯 Correspondance PyTorch-ONNX: {correct_matches}/{num_tests} ({accuracy:.1f}%)")
+    print(f"Correspondance PyTorch-ONNX: {correct_matches}/{num_tests} ({accuracy:.1f}%)")
     
     if accuracy == 100:
-        print("🌟 Parfait! Le modèle ONNX est identique au modèle PyTorch!")
+        print("Parfait! Le modèle ONNX est identique au modèle PyTorch!")
     elif accuracy >= 95:
         print("👍 Très bon! Différences mineures acceptables.")
     else:
-        print("⚠️  Attention: Différences significatives détectées.")
+        print("Attention: Différences significatives détectées.")
     
     return accuracy
 
 def optimize_onnx_model(onnx_path, optimized_path):
     """Optimise le modèle ONNX pour le web"""
     
-    print(f"\n⚡ Optimisation du modèle ONNX...")
+    print(f"\nOptimisation du modèle ONNX...")
     
     try:
         import onnxoptimizer
@@ -170,7 +170,7 @@ def optimize_onnx_model(onnx_path, optimized_path):
         return True
         
     except ImportError:
-        print("⚠️  onnxoptimizer non installé. Installation...")
+        print("onnxoptimizer non installé. Installation...")
         os.system("pip install onnxoptimizer")
         return False
     except Exception as e:
@@ -263,11 +263,11 @@ def main():
     if args.web:
         create_web_assets(args.onnx_path)
     
-    print(f"\n🎉 Export ONNX terminé avec succès!")
+    print(f"\nExport ONNX terminé avec succès!")
     print(f"📁 Modèle ONNX: {args.onnx_path}")
     
     # Instructions pour l'utilisation
-    print(f"\n🚀 Utilisation:")
+    print(f"\nUtilisation:")
     print(f"   - Web: python export_onnx.py --web")
     print(f"   - Test: python export_onnx.py --test")
     print(f"   - Optimisation: python export_onnx.py --optimize")

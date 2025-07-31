@@ -92,7 +92,7 @@ def plot_prediction_examples(model, test_loader, num_examples=20, save_path=None
     
     if save_path:
         plt.savefig(save_path, dpi=300, bbox_inches='tight')
-        print(f"🖼️  Exemples sauvegardés dans {save_path}")
+        print(f"Exemples sauvegardés dans {save_path}")
     
     plt.show()
 
@@ -160,7 +160,7 @@ def analyze_errors(model, test_loader, save_path=None, top_k=10):
         print(f"🟢 Classe la plus fiable: {best_class[0]} ({best_class[1]:.1f}% d'erreurs)")
         
         # Matrice de confusion des erreurs
-        print(f"\n🎯 Analyse des confusions:")
+        print(f"\nAnalyse des confusions:")
         conf_matrix = confusion_matrix(all_targets[errors], all_predictions[errors])
         
         # Top des confusions
@@ -180,7 +180,7 @@ def analyze_errors(model, test_loader, save_path=None, top_k=10):
         
         # Afficher les erreurs les plus confiantes
         if len(error_images) >= top_k:
-            print(f"\n🎭 Top {top_k} des erreurs les plus confiantes:")
+            print(f"\nTop {top_k} des erreurs les plus confiantes:")
             
             # Trier par confiance décroissante
             error_images.sort(key=lambda x: x['confidence'], reverse=True)
@@ -259,16 +259,16 @@ def main():
     if args.device == 'auto':
         if torch.cuda.is_available():
             device = torch.device('cuda')
-            print(f"🚀 CUDA détecté: {torch.cuda.get_device_name()}")
+            print(f"CUDA détecté: {torch.cuda.get_device_name()}")
         elif torch.backends.mps.is_available():
             device = torch.device('mps')
             print("🍎 Apple Silicon détecté: utilisation de MPS")
         else:
             device = torch.device('cpu')
-            print("💻 Utilisation du CPU")
+            print("Utilisation du CPU")
     else:
         device = torch.device(args.device)
-        print(f"🎯 Device spécifié: {device}")
+        print(f"Device spécifié: {device}")
     
     # Vérifier que le modèle existe
     if not os.path.exists(args.model_path):
@@ -376,16 +376,16 @@ def main():
     # Messages de fin
     print("\n" + "="*60)
     print("✅ Évaluation terminée avec succès!")
-    print(f"🏆 Précision finale: {test_accuracy*100:.2f}%")
+    print(f"Précision finale: {test_accuracy*100:.2f}%")
     
     if test_accuracy > 0.99:
-        print("🌟 Performance exceptionnelle! Modèle de très haute qualité.")
+        print("Performance exceptionnelle! Modèle de très haute qualité.")
     elif test_accuracy > 0.98:
         print("⭐ Excellente performance! Modèle de haute qualité.")
     elif test_accuracy > 0.95:
         print("👍 Bonne performance! Modèle fonctionnel.")
     else:
-        print("💡 Performance modeste. Le modèle pourrait être amélioré.")
+        print("Performance modeste. Le modèle pourrait être amélioré.")
     
     print(f"\n📊 Voir les résultats dans le dossier 'results/'")
 

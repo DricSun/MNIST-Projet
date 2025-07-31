@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🧠 Classification MNIST - IA en Ligne</title>
+    <title>Classification MNIST - IA en Ligne</title>
     <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.16.3/dist/ort.min.js"></script>
     <style>
         * {
@@ -170,7 +170,7 @@
         }
 
         .info-section li:before {
-            content: "🧠 ";
+            content: "AI ";
             margin-right: 8px;
         }
 
@@ -231,7 +231,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>🧠 Classification MNIST</h1>
+            <h1>Classification MNIST</h1>
             <p>Reconnaissance intelligente de chiffres manuscrits</p>
         </div>
 
@@ -241,13 +241,13 @@
         </div>
 
         <div class="controls">
-            <button id="clearBtn" class="btn btn-secondary">🗑️ Effacer</button>
-            <button id="predictBtn" class="btn btn-primary">🎯 Prédire</button>
+            <button id="clearBtn" class="btn btn-secondary">Effacer</button>
+            <button id="predictBtn" class="btn btn-primary">Prédire</button>
         </div>
 
         <div id="result" class="result info">
             <span id="loading" class="loading" style="display: none;"></span>
-            <span id="resultText">🚀 Chargement du modèle IA...</span>
+            <span id="resultText">Chargement du modèle IA...</span>
         </div>
 
    
@@ -417,7 +417,7 @@
                 }
 
                 try {
-                    this.updateResult('info', '🔮 Prédiction en cours...', true);
+                    this.updateResult('info', 'Prédiction en cours...', true);
                     
                     if (this.isFlaskMode) {
                         // Mode Flask - utiliser l'API
@@ -478,7 +478,7 @@
                 
                 // Afficher le résultat
                 const confidencePercent = (confidence * 100).toFixed(1);
-                this.updateResult('success', `🎯 Prédiction (ONNX.js): ${maxIndex} (${confidencePercent}% de confiance)`);
+                this.updateResult('success', `Prédiction (ONNX.js): ${maxIndex} (${confidencePercent}% de confiance)`);
             }
 
             updateResult(type, message, loading = false) {

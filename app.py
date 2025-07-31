@@ -48,7 +48,7 @@ def load_model():
             model = MNISTModel(device=device)
             model.load_model(MODEL_PATH)
             print(f"✅ Modèle PyTorch chargé depuis {MODEL_PATH}")
-            print(f"🎯 Device utilisé: {device}")
+            print(f"Device utilisé: {device}")
         else:
             print(f"❌ Modèle non trouvé dans {MODEL_PATH}")
             print("Veuillez d'abord entraîner le modèle avec: python train.py")
@@ -151,7 +151,7 @@ def predict_canvas():
             'message': f'Le chiffre prédit est {prediction} avec une confiance de {confidence*100:.1f}%'
         }
         
-        print(f"🎨 Canvas - Prédiction: {prediction}, Confiance: {confidence:.3f}")
+        print(f"Canvas - Prédiction: {prediction}, Confiance: {confidence:.3f}")
         return jsonify(response_data)
     
     except Exception as e:
@@ -279,18 +279,18 @@ def internal_error(e):
     return jsonify({'error': 'Erreur interne du serveur'}), 500
 
 if __name__ == '__main__':
-    print("=== 🔥 Interface Web MNIST avec PyTorch ===")
+    print("=== Interface Web MNIST avec PyTorch ===")
     print("Initialisation...")
     
     # Détection du device
     device = get_device()
-    print(f"🎯 Device détecté: {device}")
+    print(f"Device détecté: {device}")
     
     # Information sur PyTorch
-    print(f"🔥 Version PyTorch: {torch.__version__}")
+    print(f"Version PyTorch: {torch.__version__}")
     
     if torch.cuda.is_available():
-        print(f"⚡ CUDA disponible: {torch.cuda.device_count()} device(s)")
+        print(f"CUDA disponible: {torch.cuda.device_count()} device(s)")
         print(f"   GPU actuel: {torch.cuda.get_device_name()}")
     elif hasattr(torch.backends, 'mps') and torch.backends.mps.is_available():
         print("🍎 Apple Silicon MPS disponible")
@@ -302,14 +302,14 @@ if __name__ == '__main__':
         print("✅ Modèle chargé avec succès!")
         print("🌐 Démarrage du serveur web...")
         print("📍 Accédez à l'application: http://localhost:5001")
-        print("\n🎯 Endpoints disponibles:")
+        print("\nEndpoints disponibles:")
         print("   - GET  /              : Interface principale")
         print("   - POST /predict_canvas: Prédiction par dessin")
         print("   - GET  /model_info    : Informations du modèle")
         print("   - GET  /health        : État du système")
         print("   - GET  /test_prediction: Test du modèle")
     else:
-        print("⚠️  Modèle non trouvé, mais le serveur démarre quand même.")
+        print("Modèle non trouvé, mais le serveur démarre quand même.")
         print("   Entraînez d'abord le modèle avec: python train.py")
         print("🌐 Serveur disponible sur: http://localhost:5001")
         print("   (La fonctionnalité de prédiction sera désactivée)")
