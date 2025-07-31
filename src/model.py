@@ -12,15 +12,15 @@ class MNISTNet(nn.Module):
     def __init__(self):
         super(MNISTNet, self).__init__()
         
-        # Couches de convolution
-        self.conv1 = nn.Conv2d(1, 32, kernel_size=3, padding=1)
-        self.conv2 = nn.Conv2d(32, 64, kernel_size=3, padding=1)
+        # convolution -> traite les images
+        self.conv1 = nn.Conv2d(1, 32, kernel_size=3, padding=1) # 1, 28, 28 -> 32, 28, 28
+        self.conv2 = nn.Conv2d(32, 64, kernel_size=3, padding=1) 
         self.conv3 = nn.Conv2d(64, 64, kernel_size=3, padding=1)
         
-        # Couches de pooling
+        # pooling -> réduit la taille des images 
         self.pool = nn.MaxPool2d(2, 2)
         
-        # Couches fully connected
+       
         self.fc1 = nn.Linear(64 * 7 * 7, 64)  # 64 canaux * 7 * 7 après pooling
         self.fc2 = nn.Linear(64, 10)
         
@@ -29,7 +29,7 @@ class MNISTNet(nn.Module):
         
     def forward(self, x):
         # Première couche conv + activation + pooling
-        x = self.pool(F.relu(self.conv1(x)))
+        x = self.pool(F.relu(self.conv1(x))) 
         
         # Deuxième couche conv + activation + pooling
         x = self.pool(F.relu(self.conv2(x)))

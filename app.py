@@ -189,7 +189,7 @@ def model_info():
                     'Conv2d(32, 64, kernel_size=3, padding=1)', 
                     'MaxPool2d(2, 2)',
                     'Conv2d(64, 64, kernel_size=3, padding=1)',
-                    'Linear(576, 64)',
+                    'Linear(3136, 64)',
                     'Dropout(0.5)',
                     'Linear(64, 10)'
                 ]
