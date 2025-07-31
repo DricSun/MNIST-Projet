@@ -16,7 +16,7 @@ import torch
 from src.model import MNISTModel
 from src.data_loader import MNISTDataLoader
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='docs')
 app.secret_key = 'mnist_classification_secret_key'
 CORS(app)
 
@@ -24,7 +24,7 @@ CORS(app)
 MODEL_PATH = 'models/mnist_model.pth'
 
 # Créer les dossiers nécessaires
-os.makedirs('templates', exist_ok=True)
+os.makedirs('docs', exist_ok=True)
 
 # Charger le modèle globalement
 model = None
